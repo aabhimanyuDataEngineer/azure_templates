@@ -20,7 +20,9 @@ on: [push]
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./azuredeploy.json
-          parameters: ./azuredeploy.parameters.json
+          parameters: 
+            storageAccountName:
+              type: String
 
         # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
