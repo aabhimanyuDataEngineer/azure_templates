@@ -19,8 +19,8 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: $GITHUB_WORKSPACE/azuredeploy.json
-        parameters: $GITHUB_WORKSPACE/azuredeploy.parameters.json
+        template: ./azuredeploy.json
+        parameters: ./azuredeploy.parameters.json
             
       # output containerName variable from template
     - run: echo ${{ steps.deploy.outputs.containerName }}
